@@ -4,48 +4,17 @@ import * as bootstrap from 'bootstrap';
 import '@popperjs/core';
 import "./facade"
 import facade from "./facade"
+import { name } from "file-loader";
 
 document.getElementById("all-content").style.display = "block"
 
 document.querySelector("#searchbutton").addEventListener(`click`, () => {
 
-  let newUserObj =
-  {
-    firstname: "Frank",
-    lastname: "F.",
-    email: "frank@freeky.com",
-    phones: [
-      {
-        number: "55555555",
-        description: "Mobil"
-      }
-    ],
-    address: {
-      street: "Herlevvej",
-      additionalInfo: "5",
-      city: "Herning",
-      zipcode: "7400"
-    },
-    hobbies: [
-      {
-        description: "https://en.wikipedia.org/wiki/Table_football",
-        name: "Bordfodbold"
-      },
-      {
-        description: "https://en.wikipedia.org/wiki/Soccer",
-        name: "Fodbold"
-      }
-    ]
-  }
-
-
-
-  let input = document.querySelector("#input").value;
-  let seachfilter = document.querySelector("#filter").value;
-  let result = facade.createUser(newUserObj);
-  
-
-  document.querySelector("#change").innerHTML = result;
+    let result = facade.getUserById("1").then(p => {
+     return p.firstname
+    });
+    
+  console.log(result);
 })
 
 /* 

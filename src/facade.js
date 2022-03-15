@@ -1,13 +1,13 @@
-const URL = "https://miemt.me/CA1/api/person"
+const URL = "https://miemt.me/CA1/api/person/"
 
 function getUserById(id) {
-  return fetch(`${URL}/${id}`)
-  .then(res => JSON)
+  return fetch(URL+id)
+  .then(res => res.json())
 }
 
 function getAllUsers(){
   return fetch(`${URL}/all`)
-  .then(res => JSON)
+  .then(res => res.json())
 }
 
 function createUser(user){
