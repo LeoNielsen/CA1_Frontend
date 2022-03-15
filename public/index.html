@@ -87,8 +87,51 @@
     </div>
 
     <div id="about_html" style="display:none;">
-      <h3>About</h3>
-      <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
+      <h3>Søg</h3>
+      <div class="flex">
+        <div class="flex-column">
+            <div class="flex">
+                <div class="flex-column">
+                    <div>
+                        <p class="small-grey-text">Søg</p>
+                    </div>
+                    <div class="flex">
+                        <input id="input" type="text">
+                    </div>
+                </div>
+                <div class="flex-column">
+                    <div>
+                        <p class="small-grey-text">Filter</p>
+                    </div>
+                    <div>
+                        <select id="filter">
+                            <option>Id</option>
+                            <option>Name</option>
+                            <option>Email</option>
+                            <option>Phone number</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flex-column">
+                    <div>
+                        <p class="small-grey-text">Klik for at søge</p>
+                    </div>
+                    <div>
+                        <button id="searchbutton">Søg</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex">
+                <div style="border: 1px solid black; width: 100%">
+                    <p id="change">hello world</p>
+                </div>
+            </div>
+            <div class="flex">
+                <p id="results"></p>
+            </div>
+        </div>
+    </div>
     </div>
     <!-- End of HTML for ABOUT Page -->
 

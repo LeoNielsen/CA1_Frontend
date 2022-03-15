@@ -2,10 +2,51 @@ import "./style.css"
 import "bootstrap/dist/css/bootstrap.css"
 import * as bootstrap from 'bootstrap';
 import '@popperjs/core';
-import "./jokeFacade"
-import jokeFacade from "./jokeFacade"
+import "./facade"
+import facade from "./facade"
 
 document.getElementById("all-content").style.display = "block"
+
+document.querySelector("#searchbutton").addEventListener(`click`, () => {
+
+  let newUserObj =
+  {
+    firstname: "Frank",
+    lastname: "F.",
+    email: "frank@freeky.com",
+    phones: [
+      {
+        number: "55555555",
+        description: "Mobil"
+      }
+    ],
+    address: {
+      street: "Herlevvej",
+      additionalInfo: "5",
+      city: "Herning",
+      zipcode: "7400"
+    },
+    hobbies: [
+      {
+        description: "https://en.wikipedia.org/wiki/Table_football",
+        name: "Bordfodbold"
+      },
+      {
+        description: "https://en.wikipedia.org/wiki/Soccer",
+        name: "Fodbold"
+      }
+    ]
+  }
+
+
+
+  let input = document.querySelector("#input").value;
+  let seachfilter = document.querySelector("#filter").value;
+  let result = facade.createUser(newUserObj);
+  
+
+  document.querySelector("#change").innerHTML = result;
+})
 
 /* 
   Add your JavaScript for all exercises Below or in separate js-files, which you must the import above
