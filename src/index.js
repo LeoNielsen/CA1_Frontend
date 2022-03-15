@@ -4,15 +4,44 @@ import * as bootstrap from 'bootstrap';
 import '@popperjs/core';
 import "./facade"
 import facade from "./facade"
-import { name } from "file-loader";
 
 document.getElementById("all-content").style.display = "block"
 
 document.querySelector("#searchbutton").addEventListener(`click`, () => {
 
-    let result = facade.getUserById("1").then(p => {
-     return p.firstname
-    });
+const user = {
+  id: 3,
+  firstname: "Bent",
+  lastname: "Bentsen",
+  email: "Bent@beauti.com",
+  phones: [
+    {
+      number: "12345678",
+      description: "Work"
+    }
+  ],
+  address: {
+    id: 3,
+    street: "Danmarksgade",
+    additionalInfo: "19",
+    city: "Ikast",
+    zipcode: "7430"
+  },
+  hobbies: [
+    {
+      id: 279,
+      name: "Fodbold",
+      description: "https://en.wikipedia.org/wiki/Soccer"
+    },
+    {
+      "id": 392,
+      "name": "Bordfodbold",
+      "description": "https://en.wikipedia.org/wiki/Table_football"
+    }
+  ]
+}
+
+  let result = facade.editUser(user);
     
   console.log(result);
 })
