@@ -31,7 +31,7 @@ function deleteUserById(userId){
 }
 
 function createUser(user){
-  return fetch(`${URL}/create`, requestOpt(user, 'post'))
+  return fetch(`${URL}create`, requestOpt(user, 'post'))
   .then(handleHttpErrors)
 }
 

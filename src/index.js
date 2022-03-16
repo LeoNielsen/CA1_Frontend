@@ -126,8 +126,6 @@ function getUserByHobby(input){
   })
 }
 
-
-
 /* Helpers */
 function tableBuilder(user){
   let phone;
@@ -148,3 +146,83 @@ function tableBuilder(user){
       <td>${user.address.city}</td>
   </tr>`
 }
+
+/*  create User*/
+document.querySelector("#create-btn").addEventListener(`click`, () => {
+  const newUser = {
+    firstname: document.querySelector("#create-firstname-input").value,
+    lastname: document.querySelector("#create-lastname-input").value,
+    email: document.querySelector("#create-email-input").value,
+    phones: [{
+    number: document.querySelector("#create-number-input").value,
+    description: document.querySelector("#create-phonedescription-input").value}],
+    address: {
+      street: document.querySelector("#create-street-input").value,
+      additionalInfo: document.querySelector("#create-additionainfo-input").value,
+      city: document.querySelector("#create-city-input").value,
+      zipcode: document.querySelector("#create-zipcode-input").value
+    },
+    hobbies: [
+      {
+        name: document.querySelector("#create-hobby-input").value,
+        description: document.querySelector("#create-hobbydescription-input").value
+      }
+    ]
+  }
+
+  facade.createUser(newUser).then( user => {
+    displayGoodMessage("Brugeren blev oprettet og fik ID: " + user.id)
+    document.querySelector("#create-firstname-input").value = "";
+    document.querySelector("#create-lastname-input").value = "";
+    document.querySelector("#create-email-input").value = "";
+    document.querySelector("#create-number-input").value = "";
+    document.querySelector("#create-street-input").value = "";
+    document.querySelector("#create-additionainfo-input").value = "";
+    document.querySelector("#create-city-input").value = "";
+    document.querySelector("#create-zipcode-input").value = "";
+    document.querySelector("#create-hobby-input").value = "";
+    document.querySelector("#create-hobbydescription-input").value = "";
+  })
+
+})
+
+/* edit user*/
+document.querySelector("#save-edit-btn").addEventListener(`click`, () => {
+  const editUser = {
+    id: document.querySelector("#edit-id").value,
+    firstname: document.querySelector("#edit-firstname").value,
+    lastname: document.querySelector("#edit-lastname").value,
+    email: document.querySelector("#edit-email").value,
+    phones: [{
+    number: document.querySelector("#edit-number").value,
+    description: document.querySelector("#edit-phonedescription").value}],
+    address: {
+      street: document.querySelector("#edit-street").value,
+      additionalInfo: document.querySelector("#edit-addtionalinfo").value,
+      city: document.querySelector("#edit-city").value,
+      zipcode: document.querySelector("#edit-zipcode").value
+    },
+    hobbies: [
+      {
+        name: document.querySelector("#edit-hobby").value,
+        description: document.querySelector("#edit-hobbydescription").value
+      }
+    ]
+  }
+
+  facade.editUser(editUser).then( user => {
+    document.querySelector("#edit-id").value = "";
+    document.querySelector("#edit-firstname").value = "";
+    document.querySelector("#edit-lastname").value = "";
+    document.querySelector("#edit-email").value = "";
+    document.querySelector("#edit-number").value = "";
+    document.querySelector("#edit-street").value = "";
+    document.querySelector("#edit-addtionalinfo").value = "";
+    document.querySelector("#edit-city").value = "";
+    document.querySelector("#edit-zipcode").value = "";
+    document.querySelector("#edit-hobby").value = "";
+    document.querySelector("#edit-hobbydescription").value = "";
+  })
+})
+
+
