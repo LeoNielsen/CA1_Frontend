@@ -1,73 +1,160 @@
-/*
-This is the Horizontal Navigation Bar Example with Active/Current Navigation Link
-From here https://www.w3schools.com/css/css_navbar.asp
-*/
-
-ul.header {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-ul.header li {
-  float: left;
-}
-
-ul.header li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-ul.header li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.selected {
-  background-color: #4caf50;
-}
-
-.content {
-  margin-left: 6%;
-  margin-right: 6%;
-  padding: 18px 16px;
-  height: 1000px;
-  font-size: small;
-}
-
-
 body{
-  background-color: lightblue;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  background-color: white;
-}
-
-.flex-column .flex div {
-  margin: 0 1px 0 1px;
+    background-color: rgb(146, 230, 255);
+    font-family: Arial, Helvetica, sans-serif;
+  }
   
-}
-
-input[type=text], select, button {
-  align-items: center;
-  justify-content: center;
-  padding: 10px 10px;
-  width: 100%;
-}
-
-.small-grey-text {
-  font-size: 12px;
-}
+  p, h3, h2 {
+    padding: 0px;
+    margin: 5px;
+  }
+  
+  h2, h3 {
+    margin-top: 20px;
+  }
+  
+  input[type=text], select, button {
+  
+    padding: 10px 10px;
+    width: 100%;
+    margin: 2px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+  }
+  
+  th, td {
+    text-align: left;
+  }
+  
+  td {
+    padding: 5px 0 5px 0;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgb(238, 250, 253);
+  }
+  th {
+    background-color: rgb(200, 237, 245);
+    padding: 2px 0 2px 0;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-left{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+  }
+  
+  .flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .small-grey-text {
+    font-size: 12px;
+  }
+  
+  .parameter-div {
+    background-color: rgb(230, 230, 230);
+    margin: 2px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgb(184, 184, 184);
+    padding: 2px 20px 2px 20px;
+    font-size: 11px;
+    color: rgb(37, 37, 37);
+    width: 100px;
+  }
+  
+  
+  
+  .delete-btn{
+    width: 5px;
+    padding: 0px;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    color: rgb(37, 37, 37);
+    text-align: center;
+  }
+  
+  .green-btn, .red-btn {
+    width: 10px;
+    background-color: transparent;
+    border: none;
+    color: rgb(37, 37, 37);
+    text-align: center;
+  }
+  
+  .green-btn {
+    color: green;
+  }
+  
+  .red-btn {
+    color: red;
+  }
+  
+  .delete-btn:hover {
+    color: rgb(255, 56, 56);
+    cursor: pointer;
+  }
+  
+  #search-div, #create-div, #edit-div{
+    margin-top: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+  }
+  
+  #create-div #create-btn {
+    background-color: green;
+    border: 1px solid green;
+    color: white;
+  }
+  
+  #search-div input[type=text], #search-div select, #search-div button {
+    width: 100%;
+  } 
+  
+  #search-btn {
+    background-color: rgb(27, 27, 27);
+    border: 1px solid rgb(0, 0, 0);
+    color: white;
+  }
+  
+  #search-parameters-div {
+    margin-top: 20px;
+  }
+  
+  #search-result-table {
+    margin-top: 20px;
+  }
+  
+  #save-edit-btn {
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+  }
+  
+  #cancel-btn {
+    background-color: black;
+    color: white;
+    border: 1px solid green;
+  }

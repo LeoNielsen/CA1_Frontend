@@ -1,148 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack/Babel-demo</title>
+  <title>CA1</title>
+  <link rel="stylesheet" href="C:\Users\leoni\OneDrive\Dokumenter\Programmering\Visual Studio\CA1_Frontend\src\style.css">
 </head>
-
 <body>
-  <!--
-    This div is added to remove the flicker that comes from bootstrap being loaded
-    first in index.js
-    REMEMBER to set display to "block" in index.js, otherwise you will not see anything
-  -->
-  <div id="all-content" style="display: none;">
-    <ul id="menu" class="header">
-      <li><a href="" id="about">About</a></li>
-      <li><a href="" id="ex1">Ex1</a></li>
-      <li><a href="" id="ex2">Ex2</a></li>
-      <li><a href="" id="ex3">Ex3</a></li>
-    </ul>
+  <div class="flex">
+    <div class="flex-column">
+        <div class="flex">
+            <div class="flex-column">
+                <div>
+                    <p class="small-grey-text">Søg</p>
+                </div>
+                <div class="flex">
+                    <input type="text" id="input">
+                </div>
+            </div>
+            <div class="flex-column">
+                <div>
+                    <p class="small-grey-text">Filter</p>
+                </div>
+                <div>
+                    <select id="filter">
+                        <option>ID</option>
+                        <option>Name</option>
+                        <option>Email</option>
+                        <option>Phone number</option>
+                    </select>
+                </div>
+            </div>
 
-    <div class="content">
-
-      <!-- This is were you should place your basic HTML for exercise-1 -->
-      <div id="ex1_html" style="display:none;">
-        <h3>Exercise 1</h3>
-        <p>Add your basic HTML for Exercise 1 here</p>
-        <ul id="jokes"></ul>
-
-      </div>
-      <!-- End of HTML for exercise-1 -->
-
-
-
-      <!-- This is were you should place your basic HTML for exercise-2 -->
-      <div id="ex2_html" style="display:none;">
-        <h3>Exercise 2</h3>
-        <p id="ex2p">Add your basic HTML for Exercise 2 here</p>
-      </div>
-      <!-- End of HTML for exercise-2 -->
-
-
-      <!-- This is were you should place your basic HTML for exercise-3 -->
-      <div id="ex3_html" style="display:none;">
-        <h3>Ex-3</h3>
-        <p>Add your basic HTML for Exercise 3 here</p>
-
-        <div class="row" style="min-height: 5em;"">
-      <div class=" col-md-8 pre-scrollable" style="background-color: lightgrey;">
-          <h5>All Users</h5>
-          <table class="table">
+            <div class="flex-column">
+                <div>
+                    <p class="small-grey-text">Klik for at søge</p>
+                </div>
+                <div>
+                    <button id="searchbutton">Søg</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex">
+            <div style="border: 1px solid black; width: 100%">
+                <p>hello world</p>
+            </div>
+        </div>
+        <div class="flex">
+          <table class="table" style="width: 100%">
             <thead>
-              <tr>
-                <th>Id</th>
-                <th>Age</th>
-                <th>Name
-                <th>
-                <th>Gender</th>
-                <th>Email </th>
+            <tr>
+              <td>ID</td>
+              <td>First Name</td>
+              <td>Last name</td>
+              <td>Email</td>
+              <td>Phone</td>
+  <!--            <td>Hobby</td>&lt;!&ndash;concat the data from description &ndash;&gt;-->
+             <td>Street</td>
+             <td>Zip</td>
+             <td>City</td>
+            </tr>
             </thead>
-            <tbody id="allUserRows">
-            <tbody>
+            <tbody id="tbody"></tbody>
           </table>
         </div>
-        <div class="col-md-4" style="background-color: powderblue;">
-          <h5>Find User</h5>
-        </div>
       </div>
-      <div class="row" style="min-height: 5em;">
-        <div class="col-md-4" style="background-color: powderblue;">
-          <h5>Add User</h5>
-        </div>
-        <div class="col-md-4" style="background-color: lightgrey;">
-          <h5>Edit User</h5>
-        </div>
-        <div class="col-md-4" style="background-color: powderblue;">
-          <h5>Delete User</h5>
-        </div>
-      </div>
-      <!-- </div> -->
-      <!-- End of HTML for exercise-3 -->
-
-      <!---- HTML for the About page -->
-
-    </div>
-
-    <div id="about_html" style="display:none;">
-      <h3>Søg</h3>
-      <div class="flex">
-        <div class="flex-column">
-            <div class="flex">
-                <div class="flex-column">
-                    <div>
-                        <p class="small-grey-text">Søg</p>
-                    </div>
-                    <div class="flex">
-                        <input id="input" type="text">
-                    </div>
-                </div>
-                <div class="flex-column">
-                    <div>
-                        <p class="small-grey-text">Filter</p>
-                    </div>
-                    <div>
-                        <select id="filter">
-                            <option>Id</option>
-                            <option>Name</option>
-                            <option>Email</option>
-                            <option>Phone number</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="flex-column">
-                    <div>
-                        <p class="small-grey-text">Klik for at søge</p>
-                    </div>
-                    <div>
-                        <button id="searchbutton">Søg</button>
-                    </div>
-                </div>
-            </div>
-            <div class="flex">
-                <div style="border: 1px solid black; width: 100%">
-                    <p id="change">hello world</p>
-                </div>
-            </div>
-            <div class="flex">
-                <p id="results"></p>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!-- End of HTML for ABOUT Page -->
-
-
-    <!--End of all content -->
   </div>
+  <div class="flex">
+      <div id="create-div" class="flex-column">
+          <h2>Create</h2>
 
-  <!-- #################################################################-->
-  <!-- IMPORTANT  DO NOT IMPORT ANY JavaScript in this file by YOURSELF -->
-  <!-- #################################################################-->
+          <!--NAME (firstname, lastname)-->
+          <!--EMAIL-->
+          <div class="flex">
+              <div class="flex-column">
+                  <p class="small-grey-text">Firstname</p>
+                  <div class="flex">
+                      <input id="create-firstname-input" type="text" placeholder="Firstname">
+                  </div>
+              </div>
+              <div class="flex-column">
+                  <p class="small-grey-text">Lastname</p>
+                  <div class="flex">
+                      <input id="create-lastname-input" type="text" placeholder="Lastname">
+                  </div>
+                  
+              </div>
+              <div class="flex-column">
+                  <p class="small-grey-text">Email</p>
+                  <div class="flex">
+                      <input id="create-email-input" type="text" placeholder="Email">
+                  </div>
+                  
+              </div>
+          </div>
+          <!--ADDRESS (street, addtionalInfo)-->
+          <!--CITYINFO (zipcode, city)-->
+          <div class="flex">
+              <div class="flex-column">
+                  <h3>Address</h3>
+                  <div class="flex">
+                      <div class="flex-column">
+                          <p class="small-grey-text">Street</p>
+                          <div class="flex">
+                              <input id="create-street-input" type="text" placeholder="Street">
+                          </div>
+                      </div>
+                      <div class="flex-column">
+                          <p class="small-grey-text">Addtional Info</p>
+                          <div class="flex">
+                              <input id="create-additionainfo-input" type="text" placeholder="Addtional Info">
+                          </div> 
+                      </div>
+                      <div class="flex-column">
+                          <p class="small-grey-text">City</p>
+                          <div class="flex">
+                              <input id="create-city-input" type="text" placeholder="City">
+                          </div>
+                      </div>      
+                      <div class="flex-column">
+                          <p class="small-grey-text">Zipcode</p>
+                          <div class="flex">
+                              <input id="create-zipcode-input" type="text" placeholder="Zipcode">
+                          </div>
+                      </div> 
+                  </div>
+              </div>
+          </div>
+          <!--PHONE (number, description)-->
+          <div class="flex-column">
+              <h3>Phone</h3>
+          
+          <div class="flex-left">
+              <div class="flex-column" style="min-width: 150px">
+                  <p class="small-grey-text">Number</p>
+                  <div class="flex">
+                      <input id="create-number-input" type="text" placeholder="Number">
+                  </div>
+              </div>
+              <div class="flex-column" style="min-width: 190px">
+                  <p class="small-grey-text">Description</p>
+                  <div class="flex">
+                      <select id="create-phonedescription-input">
+                          <option value="home">Home</option>
+                          <option value="mobile">Mobile</option>
+                          <option value="work">Work</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="flex-column" style="max-width: 20px;">
+                  <p class="small-grey-text" style="color: white">Add</p>
+                 <div>
+                      <button id="create-phone-btn" class="green-btn"><i class="fa fa-check"></i></button>
+                 </div>
+              </div>
+          
+          </div> 
+          <p class="small-grey-text">Registered phones</p>
+          <div class="flex-left" id="create-phones-div">
+              <div class="flex-column" style="min-width: 150px">
+                  <div class="flex">
+                      <input type="text" style="background-color: lightgrey; border: 1px solid lightgrey" value="Hobby" readonly>
+                  </div>
+              </div>
+              <div class="flex-column" style="min-width: 150px">
+                  
+                  <div class="flex">
+                      <input type="text" value="Description" style="background-color: lightgrey; border: 1px solid lightgrey" readonly>
+                  </div>
+              </div>
+              
+              <div class="flex-column" style="max-width: 20px;">
+                 <div>
+                      <button class="red-btn"><i class="fa fa-times"></i></button>
+                 </div>
+              </div>
+          </div> 
+      </div>
 
+          <!--HOBBY (name, description)-->
+          <div class="flex-column">
+              <h3>Hobby</h3>
+              <div class="flex-left">
+                  <div class="flex-column" style="min-width: 150px">
+                      <p class="small-grey-text">Hobby</p>
+                      <div class="flex">
+                          <input id="create-hobby-input" type="text" placeholder="Hobby">
+                      </div>
+                  </div>
+                  <div class="flex-column" style="min-width: 150px">
+                      <p class="small-grey-text">Description</p>
+                      <div class="flex">
+                          <input id="create-hobbydescription-input" type="text" placeholder="Description">
+                      </div>
+                  </div>
+                  <div class="flex-column" style="max-width: 20px;">
+                      <p class="small-grey-text" style="color: white">Add</p>
+                     <div>
+                          <button id="create-hobby-btn" class="green-btn"><i class="fa fa-check"></i></button>
+                     </div>
+                  </div>
+              </div> 
+              <p class="small-grey-text">Registred hobbies</p>
+          <div class="flex-left" id="create-hobbies-div">
+              <div class="flex-column" style="min-width: 150px">
+                  <div class="flex">
+                      <input type="text" style="background-color: lightgrey; border: 1px solid lightgrey" value="Hobby" readonly>
+                  </div>
+              </div>
+              <div class="flex-column" style="min-width: 150px">
+                  
+                  <div class="flex">
+                      <input type="text" value="Description" style="background-color: lightgrey; border: 1px solid lightgrey" readonly>
+                  </div>
+              </div>
+              
+              <div class="flex-column" style="max-width: 20px;">
+                 <div>
+                      <button class="red-btn"><i class="fa fa-times"></i></button>
+                 </div>
+              </div>
+          </div> 
+          <div class="flex-left" style="margin-top: 20px">
+              <button id="create-btn">Create</button>
+          </div>
+      </div> 
+      </div>
+  </div>
+  <div class="flex">
+      <div id="edit-div" class="flex-column">
+          <h2>Edit</h2>
+
+          <!--NAME (firstname, lastname)-->
+          <!--EMAIL-->
+          <div class="flex">
+              <div class="flex-column">
+                  <p class="small-grey-text">Firstname</p>
+                  <div class="flex">
+                      <input type="text" placeholder="Firstname">
+                  </div>
+              </div>
+              <div class="flex-column">
+                  <p class="small-grey-text">Lastname</p>
+                  <div class="flex">
+                      <input type="text" placeholder="Lastname">
+                  </div>
+                  
+              </div>
+              <div class="flex-column">
+                  <p class="small-grey-text">Email</p>
+                  <div class="flex">
+                      <input type="text" placeholder="Email">
+                  </div>
+                  
+              </div>
+          </div>
+          <!--ADDRESS (street, addtionalInfo)-->
+          <!--CITYINFO (zipcode, city)-->
+          <div class="flex">
+              <div class="flex-column">
+                  <h3>Address</h3>
+                  <div class="flex">
+                      <div class="flex-column">
+                          <p class="small-grey-text">Street</p>
+                          <div class="flex">
+                              <input type="text" placeholder="Street">
+                          </div>
+                      </div>
+                      <div class="flex-column">
+                          <p class="small-grey-text">Addtional Info</p>
+                          <div class="flex">
+                              <input type="text" placeholder="Addtional Info">
+                          </div> 
+                      </div>
+                      <div class="flex-column">
+                          <p class="small-grey-text">City</p>
+                          <div class="flex">
+                              <input type="text" placeholder="City">
+                          </div>
+                      </div>      
+                      <div class="flex-column">
+                          <p class="small-grey-text">Zipcode</p>
+                          <div class="flex">
+                              <input type="text" placeholder="Zipcode">
+                          </div>
+                      </div> 
+                  </div>
+              </div>
+          </div>
+          <!--PHONE (number, description)-->
+          <div class="flex-column">
+              <h3>Phone</h3>
+          
+          <div class="flex-left">
+              <div class="flex-column" style="min-width: 150px">
+                  <p class="small-grey-text">Number</p>
+                  <div class="flex">
+                      <input type="text" placeholder="Number">
+                  </div>
+              </div>
+              <div class="flex-column" style="min-width: 190px">
+                  <p class="small-grey-text">Description</p>
+                  <div class="flex">
+                      <select>
+                          <option value="home">Home</option>
+                          <option value="mobile">Mobile</option>
+                          <option value="work">Work</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="flex-column" style="max-width: 20px;">
+                  <p class="small-grey-text" style="color: white">Add</p>
+                 <div>
+                      <button class="green-btn"><i class="fa fa-check"></i></button>
+                 </div>
+              </div>
+          
+          </div> 
+          <p class="small-grey-text">Registred phones</p>
+          <div class="flex-left">
+              <div class="flex-column" style="min-width: 150px">
+                  <div class="flex">
+                      <input type="text" style="background-color: lightgrey; border: 1px solid lightgrey" value="Hobby" readonly>
+                  </div>
+              </div>
+              <div class="flex-column" style="min-width: 150px">
+                  
+                  <div class="flex">
+                      <input type="text" value="Description" style="background-color: lightgrey; border: 1px solid lightgrey" readonly>
+                  </div>
+              </div>
+              
+              <div class="flex-column" style="max-width: 20px;">
+                 <div>
+                      <button class="red-btn"><i class="fa fa-times"></i></button>
+                 </div>
+              </div>
+          </div> 
+          </div>
+
+          <!--HOBBY (name, description)-->
+          <div class="flex-column">
+              <h3>Hobby</h3>
+              <div class="flex-left">
+                  <div class="flex-column" style="min-width: 150px">
+                      <p class="small-grey-text">Hobby</p>
+                      <div class="flex">
+                          <input type="text" placeholder="Hobby">
+                      </div>
+                  </div>
+                  <div class="flex-column" style="min-width: 150px">
+                      <p class="small-grey-text">Description</p>
+                      <div class="flex">
+                          <input type="text" placeholder="Description">
+                      </div>
+                  </div>
+                  <div class="flex-column" style="max-width: 20px;">
+                      <p class="small-grey-text" style="color: white">Add</p>
+                     <div>
+                          <button class="green-btn"><i class="fa fa-check"></i></button>
+                     </div>
+                  </div>
+              </div> 
+              <p class="small-grey-text">Registred hobbies</p>
+          <div class="flex-left">
+              <div class="flex-column" style="min-width: 150px">
+                  <div class="flex">
+                      <input type="text" style="background-color: lightgrey; border: 1px solid lightgrey" value="Hobby" readonly>
+                  </div>
+              </div>
+              <div class="flex-column" style="min-width: 150px">
+                  
+                  <div class="flex">
+                      <input type="text" value="Description" style="background-color: lightgrey; border: 1px solid lightgrey" readonly>
+                  </div>
+              </div>
+              
+              <div class="flex-column" style="max-width: 20px;">
+                 <div>
+                      <button class="red-btn"><i class="fa fa-times"></i></button>
+                 </div>
+              </div>
+          </div> 
+          </div>
+          <div class="flex-left" style="margin-top: 20px">
+              <button id="save-edit-btn">Save changes</button>
+              <button id="cancel-btn">Cancel</button>
+          </div>
+      </div>
+  </div>
 </body>
-
 </html>

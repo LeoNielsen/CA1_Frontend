@@ -11,17 +11,17 @@ function getAllUsers(){
 }
 
 function getUsersByHobby(hobby){
-  return fetch(`${URL}hobby/${hobby}`, requestOpt(hobby, 'get'))
+  return fetch(`${URL}hobby/${hobby}`)
   .then(res => res.json())
 }
 
 function getUsersByZipcode(zipcode){
-  return fetch(`${URL}zipcode/${zipcode}`,requestOpt(zipcode, 'get'))
+  return fetch(`${URL}zipcode/${zipcode}`)
   .then(res => res.json())
 }
 
 function getUserByPhone(phone){
-  return fetch(`${URL}phone/${phone}`, requestOpt(phone, 'get'))
+  return fetch(`${URL}phone/${phone}`)
   .then(res => res.json())
 }
 
