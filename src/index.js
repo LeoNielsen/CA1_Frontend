@@ -171,7 +171,7 @@ document.querySelector("#create-btn").addEventListener(`click`, () => {
   }
 
   facade.createUser(newUser).then( user => {
-    displayGoodMessage("Brugeren blev oprettet og fik ID: " + user.id)
+    document.querySelector("#create-msg").innerHTML = "person created";
     document.querySelector("#create-firstname-input").value = "";
     document.querySelector("#create-lastname-input").value = "";
     document.querySelector("#create-email-input").value = "";
@@ -211,6 +211,7 @@ document.querySelector("#save-edit-btn").addEventListener(`click`, () => {
   }
 
   facade.editUser(editUser).then( user => {
+    document.querySelector("#edit-msg").innerHTML = "person edited";
     document.querySelector("#edit-id").value = "";
     document.querySelector("#edit-firstname").value = "";
     document.querySelector("#edit-lastname").value = "";
@@ -222,6 +223,16 @@ document.querySelector("#save-edit-btn").addEventListener(`click`, () => {
     document.querySelector("#edit-zipcode").value = "";
     document.querySelector("#edit-hobby").value = "";
     document.querySelector("#edit-hobbydescription").value = "";
+  })
+})
+
+/* delete */
+document.querySelector("#delete-btn").addEventListener(`click`, () => {
+  let input = document.querySelector("#delete-id").value;
+
+  facade.deleteUserById(input).then( user => {
+    document.querySelector("#delete-msg").innerHTML = "person deleted";
+    document.querySelector("#delete-id").value = "";
   })
 })
 

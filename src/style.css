@@ -115,7 +115,7 @@ body{
     cursor: pointer;
   }
   
-  #search-div, #create-div, #edit-div{
+  #search-div, #create-div, #edit-div, #delete-div{
     margin-top: 20px;
     padding: 20px;
     width: 80%;
@@ -149,6 +149,12 @@ body{
   
   #save-edit-btn {
     background-color: green;
+    color: white;
+    border: 1px solid green;
+  }
+
+  #delete-btn {
+    background-color: darkred;
     color: white;
     border: 1px solid green;
   }

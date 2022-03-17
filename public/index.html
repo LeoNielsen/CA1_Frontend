@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CA1</title>
   <link rel="stylesheet" href="C:\Users\leoni\OneDrive\Dokumenter\Programmering\Visual Studio\CA1_Frontend\src\style.css">
-</head>
-<body>
+</head> 
   <div class="flex">
     <div class="flex-column">
         <div class="flex">
@@ -226,6 +225,7 @@
                  </div>
               </div>
           </div> 
+          <p id="create-msg"></p>
           <div class="flex-left" style="margin-top: 20px">
               <button id="create-btn">Create</button>
           </div>
@@ -394,11 +394,35 @@
               </div>
           </div> 
           </div>
+          <p id="edit-msg"></p>
           <div class="flex-left" style="margin-top: 20px">
               <button id="save-edit-btn">Save changes</button>
               <button id="cancel-btn">Cancel</button>
           </div>
       </div>
+
+      
+
+
   </div>
+  <div class="flex">
+    <div id="delete-div" class="flex-column">
+        <h2>delete</h2>
+
+        
+      <div class="flex">
+        <div class="flex-column">
+          <p class="small-grey-text">Delete person by ID</p>
+          
+          <p id="delete-msg"></p>
+          <div class="flex">
+            <input id="delete-id" type="text" placeholder="ID">
+            <button id="delete-btn">Delete</button>
+          </div>
+        </div>      
+      </div>
+    </div>  
+  </div> 
+</div> 
 </body>
 </html>
